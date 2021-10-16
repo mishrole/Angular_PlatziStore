@@ -74,6 +74,12 @@
 
 <h1>{{ title }}</h1>
 
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Mitch'">¡Hola {{ title }}!</p>
+  <p *ngSwitchCase="'Klaus'">¡Hey {{ title }}!</p>
+  <p *ngSwitchDefault>Hola camarón con cola</p>
+</div>
+
 <input required type="text" [(ngModel)]="title">
 <button (click)="addItem()">Añadir</button>
 
