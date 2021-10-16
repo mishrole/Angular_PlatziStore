@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Course } from 'src/models/course.model';
-import { Product } from 'src/models/product.model';
+import { Course } from './models/course.model';
+import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,10 @@ import { Product } from 'src/models/product.model';
 })
 export class AppComponent {
   title = 'platzi-store';
+
+  clickProduct(id : number) {
+    alert(`ProductId: ${id}`);
+  }
 
   products : Product[] = [
     {
