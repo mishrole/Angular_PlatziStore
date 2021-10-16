@@ -1,6 +1,17 @@
-<input required type="text" [(ngModel)]="title">
+<div class="product" *ngFor="let product of products">
+  <div class="product__item">
+    <img [src]="product.image" alt="" width="200">
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.description }}</p>
+    <p><b>$ {{ product.price.toFixed(2) }}</b></p>
+  </div>
+</div>
+
+<hr>
+
 <h1>{{ title }}</h1>
 
+<input required type="text" [(ngModel)]="title">
 <button (click)="addItem()">Añadir</button>
 
 <ul>
