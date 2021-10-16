@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Course } from 'src/models/course.model';
 import { Product } from 'src/models/product.model';
 
 @Component({
@@ -53,6 +54,43 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     }
   ];
+
+  courses: Course[] = [
+    {
+      name: 'Curso de Fundamentos de Angular',
+      path: 'Angular',
+      teacher: 'Nicolas Molina',
+    },
+    {
+      name: 'Clases del Curso de Angular: Componentes y Servicios',
+      path: 'Angular',
+      teacher: 'Nicolas Molina',
+    },
+    {
+      name: 'Clases del Curso de Consumo de APIs REST con Angular',
+      path: 'Angular',
+      teacher: 'Nicolas Molina',
+    },
+  ];
+
+  newCourse = <Course>{};
+
+  validateForm(name: boolean, path: boolean, teacher: boolean) {
+    if (name && path && teacher) {
+      return false;
+    }
+
+    return true;
+  }
+
+  addCourse() {
+    this.courses.push(this.newCourse);
+    this.newCourse = {} as Course;
+  }
+
+  removeCourse(_index: number) {
+    this.courses.splice(_index, 1);
+  }
 
   items = ['😀','😁','😂','🤣'];
 

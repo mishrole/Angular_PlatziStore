@@ -1,0 +1,68 @@
+p
+  font-family: Lato
+
+.container,
+.form,
+.form__input
+  display: flex
+  flex-direction: column
+
+
+.container,
+.form
+  justify-content: center
+  align-items: center
+
+.form__input,
+button
+  padding: 0.5em
+
+button
+  margin-top: 1em
+  min-width: 100px
+
+.main
+  margin-top: 2em
+
+.courses__container
+  display: flex
+  justify-content: center
+  gap: 1em
+  flex-wrap: wrap
+
+.courses__item
+  width: 250px
+  border: 1px solid #9E9E9E
+  padding: 1em
+  border-radius: 6px
+  user-select: none
+
+.courses__header > *,
+.courses__body > *
+  margin: 0
+
+.courses__header
+  display: flex
+  align-items: center
+  font-size: 1.1rem
+  font-weight: bold
+  p
+    &:nth-child(1)
+      flex-grow: 2
+    &:nth-child(2)
+      flex-grow: 1
+      text-align: right
+
+.courses__footer
+  display: flex
+  button
+    flex-grow: 1
+    background-color: #f44336
+    border: 1px solid #f44336
+    color: #ffffff
+    font-weight: bold
+
+    &:hover
+      background-color: #d32f2f
+      cursor: pointer
+

@@ -9,6 +9,69 @@
 
 <hr>
 
+<div class="container">
+  <h1>Cursos pendientes</h1>
+  <div class="form">
+    <div class="form__input">
+      <span>Curso</span>
+      <input
+        type="text"
+        required
+        #nameInput="ngModel"
+        [(ngModel)]="newCourse.name"
+      />
+    </div>
+    <div class="form__input">
+      <span>Especialidad</span>
+      <input
+        type="text"
+        required
+        #pathInput="ngModel"
+        [(ngModel)]="newCourse.path"
+      />
+    </div>
+    <div class="form__input">
+      <span>Profesor</span>
+      <input
+        type="text"
+        required
+        #teacherInput="ngModel"
+        [(ngModel)]="newCourse.teacher"
+      />
+    </div>
+    <button
+      [disabled]="
+        validateForm(nameInput.valid || false, pathInput.valid || false, teacherInput.valid || false)
+      "
+      (click)="addCourse()"
+    >
+      Añadir
+    </button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="courses__container">
+    <div *ngFor="let course of courses; index as i" class="courses__item">
+      <div class="courses__header">
+        <p>{{ course.name }}</p>
+        <p>{{ i + 1 }}</p>
+      </div>
+      <div class="courses__body">
+        <p>{{ course.path }}</p>
+        <p>{{ course.teacher }}</p>
+      </div>
+      <div class="courses__footer">
+        <button (click)="removeCourse(i)">Eliminar</button>
+      </div>
+    </div>
+    <h3 *ngIf="courses.length === 0">Todavía no tienes cursos 😴</h3>
+  </div>
+</div>
+
+
+<hr>
+
 <h1>{{ title }}</h1>
 
 <input required type="text" [(ngModel)]="title">
