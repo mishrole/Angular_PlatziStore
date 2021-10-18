@@ -1,10 +1,15 @@
-<h3>Soy un componente llamado Producto</h3>
-<div class="product">
-  <div class="product__item">
-    <img [src]="product?.image" alt="" width="200">
-    <h1>{{ product?.title }}</h1>
-    <p>{{ product?.description }}</p>
-    <strong>$ {{ product!.price.toFixed(2)}}</strong>
-    <button (click)="addToCart()">Agregar al carrito</button>
+<div class="card">
+  <div class="card__container">
+    <div class="card__header">
+      <img [src]="product?.image" alt="">
+    </div>
+    <div class="card__body">
+      <h2>{{ product?.title }}</h2>
+      <!--<p>{{ product?.description }}</p>-->
+      <h3>$ {{ product!.price.toFixed(2)}}</h3>
+    </div>
+    <div class="card__footer">
+      <button class="card__footer__item" (click)="addToCart()">Agregar al carrito</button>
+    </div>
   </div>
 </div>
