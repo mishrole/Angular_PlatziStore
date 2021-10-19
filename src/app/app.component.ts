@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Course } from './models/course.model';
 import { Product } from './models/product.model';
 
 @Component({
@@ -12,6 +11,11 @@ export class AppComponent {
 
   clickProduct(id : number) {
     alert(`ProductId: ${id}`);
+  }
+
+  removeProductFromProducts(id: number) {
+    let currentProduct = this.products.findIndex(product => product.id === id.toString())
+    this.products.splice(currentProduct, 1);
   }
 
   products : Product[] = [
