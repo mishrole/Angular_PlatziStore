@@ -4,9 +4,10 @@
       <img [src]="product.image" alt="">
     </div>
     <div class="card__body">
-      <h2>{{ product.title }}</h2>
-      <!--<p>{{ product?.description }}</p>-->
-      <h3>$ {{ product.price.toFixed(2)}}</h3>
+      <h2>{{ product.title | uppercase }}</h2>
+      <h3>{{ product.price.toFixed(2) | currency:"PEN"}}</h3>
+      <p>{{ product?.description | slice: 0:10 }}</p>
+      <p>{{ today | date }}</p>
     </div>
     <div class="card__footer">
       <button class="card__footer__item" (click)="addToCart()">Agregar al carrito</button>

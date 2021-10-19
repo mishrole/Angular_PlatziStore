@@ -29,6 +29,8 @@ export class ProductComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
 
   @Output() removeClicked: EventEmitter<any> = new EventEmitter();
 
+  today = new Date()
+
   constructor() {
     // Se llama n veces en función a la cantidad de productos que tenemos, en nuestro caso 6
     console.log('1. Constructor');
