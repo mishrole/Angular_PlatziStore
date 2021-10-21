@@ -4,7 +4,7 @@
       <img [src]="product.image" alt="">
     </div>
     <div class="card__body">
-      <h2>{{ product.title | uppercase }}</h2>
+      <h2 appHighlight>{{ product.title | uppercase }}</h2>
       <h3>{{ product.price.toFixed(2) | currency:"PEN"}}</h3>
       <p>{{ product?.description | slice: 0:10 }}</p>
       <p>{{ today | date }}</p>

@@ -1,4 +1,8 @@
 <div class="container">
+
+  <input type="text" [(ngModel)]="power">
+  <p>{{ power | exponential }}</p>
+
   <div class="product__container">
     <div *ngFor="let product of products">
       <app-product (addToCartClicked)="clickProduct($event)" (removeClicked)="removeProductFromProducts($event)" [product]="product"></app-product>

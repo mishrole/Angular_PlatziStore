@@ -9,6 +9,8 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'platzi-store';
 
+  power = 10;
+
   clickProduct(id : number) {
     alert(`ProductId: ${id}`);
   }
