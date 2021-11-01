@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card__container">
     <div class="card__header">
-      <img [src]="product.image" alt="">
+      <img [src]="product.image" alt="" [routerLink]="['/shop', product?.id]">
     </div>
     <div class="card__body">
       <h2 appHighlight>{{ product.title | uppercase }}</h2>
