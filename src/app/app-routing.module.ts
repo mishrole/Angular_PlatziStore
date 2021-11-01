@@ -5,33 +5,40 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'shop',
-    component: ShopComponent
-  },
-  {
-    path: 'shop/:id',
-    component: ProductDetailComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'shop',
+        component: ShopComponent
+      },
+      {
+        path: 'shop/:id',
+        component: ProductDetailComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+    ]
   },
   {
     path: '**',
     component: NotFoundComponent
-  }
+  },
 ];
 
 @NgModule({
