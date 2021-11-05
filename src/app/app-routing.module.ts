@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { LayoutComponent } from './layout/layout.component';
+import { LayoutComponent } from './modules/shared/components/layout/layout.component';
 
 const routes: Routes = [
   {
@@ -33,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundComponent
+    loadChildren: () => import('./pages/not-found/not-found.module').then(module => module.NotFoundModule)
   },
 ];
 
