@@ -5,7 +5,7 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,12 +13,18 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     HeaderComponent,
     FooterComponent,
     ExponentialPipe,
-    HighlightDirective,],
+    HighlightDirective
+  ],
   imports: [
-    AppRoutingModule,
+    RouterModule,
     CommonModule
   ],
-  exports: [LayoutComponent, HeaderComponent, FooterComponent, ExponentialPipe,
-    HighlightDirective]
+  exports: [
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+    ExponentialPipe,
+    HighlightDirective
+  ]
 })
 export class SharedModule { }
