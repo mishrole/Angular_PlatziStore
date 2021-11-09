@@ -8,10 +8,10 @@
       <h2>{{ product.title | uppercase }}</h2>
       <h3>{{ product.price.toFixed(2) | currency:"PEN"}}</h3>
       <p>{{ product?.description | slice: 0:10 }}</p>
-      <p>{{ today | date }}</p>
+      <!-- <p>{{ today | date }}</p> -->
     </div>
     <div class="card__footer">
-      <button class="card__footer__item" (click)="addToCart()">Agregar al carrito</button>
+      <button mat-raised-button color="primary" (click)="addToCart()">Agregar al carrito</button>
       <!--<button class="card__footer__item" (click)="removeProduct()">Eliminar Producto</button>-->
     </div>
   </div>

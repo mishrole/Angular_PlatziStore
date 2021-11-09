@@ -4,6 +4,7 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
   ],
   imports: [
     CommonModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    MaterialModule
   ]
 })
 

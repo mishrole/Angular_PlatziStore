@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ContactComponent } from './components/contact/contact.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { ContactRoutingModule } from './contact-routing.module';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,8 @@ import { ContactRoutingModule } from './contact-routing.module';
   ],
   imports: [
     CommonModule,
-    ContactRoutingModule
+    ContactRoutingModule,
+    FlexLayoutModule
   ],
 })
 

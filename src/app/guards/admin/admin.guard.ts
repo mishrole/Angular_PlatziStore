@@ -11,7 +11,8 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // Resolvemos con servicio de autenticación en función al rol
     // Indica si puede o no ingresar a una ruta
-      return false;
+      // return false;
+      return true; // Permitir
   }
 
 }
